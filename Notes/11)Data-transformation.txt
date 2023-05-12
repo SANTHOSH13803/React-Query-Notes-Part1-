@@ -1,0 +1,13 @@
+---- Data Transformation ---
+
+-> useQuery provides fetched data, for some case we want to modify the data
+    fetched we use "select" property in third arguments.
+
+Syntax :  In 3rd argument of useQuery
+
+    select: (data) => {
+        return data.data.map((each) => each.name);
+    },
+
+By doing this instead of giving all the data from the fetched API,
+useQuery gives the modified data(select key data(ie,only superHerosName)).

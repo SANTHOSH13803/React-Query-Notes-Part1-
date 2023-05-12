@@ -1,0 +1,3 @@
+Sometimes we need to fetch the same data repeatedly in different components, 
+Instead of copy paste the code.
+    We can reduce the code by implementing code logic as a hook.

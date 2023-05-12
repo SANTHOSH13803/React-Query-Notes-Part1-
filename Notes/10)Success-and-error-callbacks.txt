@@ -1,0 +1,40 @@
+------> Callbacks with usequery <-----
+
+* When we are data fetching sometimes we need side effects.
+    Eg : Opening a modal, Navigate to different Routes, Displaying toast notification.
+
+* To perform the side effects we pass the to keys to the third argument (object) of useQuery.
+    > This are provided by useQuery by default.
+    > These default funtions don't have any code we can assign a callback when we need it.
+
+    ** onSuccess -> When the fetching is success.
+    ** onError -> When there is an error is fetching
+
+---- Implemeting in code. ----
+
+Step-1 :Define onSuccess and onFailure funtions
+
+    const onSuccess = (data) => {
+        console.log("Perform side effect on data fetching",data);
+    };
+    const onFailure = (error) => {
+        console.log("Perform side effect after getting error.", error);
+    };
+
+Step-2 : Pass it to the third argument of useQuery hook.
+
+    const result = useQuery(
+        "super-heros",
+        () => {
+            return axios.get("http://localhost:4000/superheroes");
+        },
+        {
+        onSuccess,
+        onError: onFailure,
+        }
+  );
+
+
+Note : 
+    > If there is an error in fetching RQ automatically refetch the data 'Three(3) Times'.
+    > If the fetching is done the callback funtion can have access to data, whereas error callback funtion has access to error msg.
