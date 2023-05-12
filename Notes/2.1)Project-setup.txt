@@ -1,0 +1,19 @@
+S-1 : 
+    > Create React app
+    > npm i react-router-dom axios json-server
+
+    Here we are using json-server to maintain a data base internally.
+
+S-2 : 
+    > Create 'db.json' in root folder and put some dummy data.
+
+S-3 : To run the json-server do the below
+        In package.json -> scripts ->  "serve-json": "json-server --watch db.json --port 4000"
+            By doing this the json data is available in port 4000
+
+S-4 :
+    Create components in src folder
+    Make three pages with router for
+        Home 
+        React query Data Fetching
+        Traditional Data Fetching

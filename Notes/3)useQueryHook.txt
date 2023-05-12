@@ -1,0 +1,17 @@
+-> Why useQuery Hook is used?
+    > useQuery hook gives all the async parameters(loding,error,data,isLoading etc,.)
+        thus we can write a minimal amount of code without using state and effect hooks.
+    
+-> How to use it? 
+    > useQuery Hook accepts two arguments
+        1) Unique Key
+        2) funtion that return a promise.
+
+    Syntax : const result = useQuery("super-heros", () => {
+                return axios.get("http://localhost:4000/superheroesa");
+             });
+    > The result gives all the parameters needed for async operations.
+    
+
+-> When to use it?
+    We can use it whenever there is data fetching.

@@ -1,0 +1,15 @@
+S-1 :  npm i react-query
+
+S-2 : In app.js 
+        import QueryClientProvider and QueryClient from react-query
+        
+S-3 : 
+    Create an instance of queryClient 
+        const queryClient = new QueryClient();
+
+    Wrap the app component with
+        <QueryClientProvider client={queryClient}>
+        ....  
+        </QueryClientProvider>
+
+

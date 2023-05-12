@@ -1,0 +1,10 @@
+-> RQ dev tools are used for debugging.
+
+
+To use the dev tools follow this approach
+
+//In app.js
+S-1 : import { ReactQueryDevtools } from "react-query/devtools";
+
+S-2 : Before the end tag of QueryClientProvider use these
+        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />

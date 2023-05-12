@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import RQDataFetching from "./components/RQDataFetching";
+import NormalDataFetching from "./components/NormalDataFetching";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="" element={<Home />} />
+          <Route path="rq-df" element={<RQDataFetching />} />
+          <Route path="tr-df" element={<NormalDataFetching />} />
+        </Routes>
+      </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      {/* Initial is open prevents dev tools open as default  */}
+    </QueryClientProvider>
   );
 }
 

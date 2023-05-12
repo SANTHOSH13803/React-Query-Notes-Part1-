@@ -1,0 +1,12 @@
+useQuery generally loading the data when the page is mounted.
+
+To stop the data to be mounted,
+we pass 
+    { enabled : false }  to the third parameter
+
+
+useQuery provide a funtion refetch we can use it for a button click event
+
+i.e, <button onClick={refetch}>Fetch Data</button>
+
+on Click of the button data will be fetched

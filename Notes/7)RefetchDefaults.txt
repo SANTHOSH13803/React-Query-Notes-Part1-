@@ -1,0 +1,19 @@
+
+3rd parameter of useQuery
+
+> refetchOnMount :
+
+If this is true(default) -> Data will be refetched when we revisits the page.
+
+If this is false -> Data will be refetched when we revisits the page.
+
+
+> refetchOnWindowFocus : 
+
+If this is true(default) -> Data will be refetched when we revisits the page.
+(This difference is seen when ever we update the data,
+ In traditional method the updated data doesn't reflect,
+ Whereas in RQ, If refetchOnWindowFocus is enabled the data gets updated )
+ 
+
+If this is false -> Data will be refetched when we revisits the page.

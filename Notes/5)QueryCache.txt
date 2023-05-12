@@ -1,0 +1,39 @@
+What is cache?
+    > Cache stores the recent data that the user searched or navigate
+        and stores it.
+    > By doing this the item will only fetch one time, If we navigate to
+        another page are re-navigate to the same page.
+
+    > You can find the difference using dev tools
+        > Inspect and slow down the network conncetion speed.
+        > Open Network tab
+        > In traditional method you can absorve, when ever we navigate to the page,
+            A new request is sent.
+        > But where as in React Query the data is only fetched one time,
+            This is because RQ uses caching(Mostly holds data for 5 min default).
+
+How RQ cache works? 
+    > When the intial fetching "isLoading" is set to true.
+    > When the data is fetched successfully, The data is stored in the cache.
+    > Thus if we navigate to the same page, the data is not fetched again because
+        RQ first searches the data in Cache with the help of Unique Key.
+    > If there is a change in data RQ updates the data respectfully by executing background re-fetch.
+        (isFetching it the parameter related background re-fetching)
+    
+    > There is an another case
+        Lets say the data got updated when we navigate to the page.
+        Instead of showing loading text, RQ first renders the cached data
+        and gets updated to new data when background fetch in done.
+
+Why RQ cache ? 
+    It helps for better user experience
+
+
+We can also change the cache time 
+    To change cacheTime, pass the third parameter to useQuery hook
+
+useQuery('name', fetchingFuntionwhichReturnsPromise,
+    {
+        cacheTime : 5000,
+    }
+)

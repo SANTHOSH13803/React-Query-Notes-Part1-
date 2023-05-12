@@ -1,0 +1,21 @@
+-> What is polling? 
+    Polling is the process of fetching data in regular intervals.
+    (Eg : Real time price of a product).
+
+-> refetchInterval : 
+    When we specified the refetchInterval to our code.
+    for every time inteval specified, The data gets refetched.
+
+    {
+        refetchInterval : 2000 // for every 2 sec query gets refetched
+    }
+
+// Note : The main point to remember is the data won't be refetched 
+            when the page loses focus.
+
+To continue to refetched data in background we can use below property
+
+-> refetchIntervalInBackground : This will continue to fetch data even the browser is not in focus.
+
+
+// Polling is generally used in applications when data changes continuously

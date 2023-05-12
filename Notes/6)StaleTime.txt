@@ -1,0 +1,14 @@
+staleTime is the length of time before your data becomes stale.
+
+
+The default value in React Query is staleTime: 0 - which means your data is immediately stale! 
+In React Query, your data can be fresh or stale.
+If it's fresh, the saved (cached) data will be used repeatedly, without more API calls to the server.
+
+To use stale time we pass it to the third arugument object in useQueryHook
+
+{
+....
+staleTime : 1000,
+
+}
