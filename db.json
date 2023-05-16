@@ -20,5 +20,22 @@
       "name": "Aquaman",
       "alterEgo": "Black Manta"
     }
+  ],
+  "friends": [
+    { "id": 1, "name": "Ganesh Chenamala" },
+    { "id": 2, "name": "Raghu Manikanta" },
+    { "id": 3, "name": "Manoj Mehatha" }
+  ],
+  "users": [
+    {
+      "id": "santhosh@example.com",
+      "channelId": "Santhosh Tech"
+    }
+  ],
+  "channels": [
+    {
+      "id": "Santhosh Tech",
+      "courses": ["React", "MUI", "Node JS", "JavaScript"]
+    }
   ]
 }

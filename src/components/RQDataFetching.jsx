@@ -1,7 +1,6 @@
-// import axios from "axios";
+import axios from "axios";
 // import React, { useState } from "react";
-// import { useQuery } from "react-query";
-import useFetchSuperHeros from "../CustomHooks/FetchSuperHeros";
+import { useQuery } from "react-query";
 
 const RQDataFetching = () => {
   // const [polling, setPolling] = useState(true);
@@ -16,25 +15,25 @@ const RQDataFetching = () => {
     // setPolling(false);
   };
   //! without using custom hook
-  // const result = useQuery(
-  //   "super-heros",
-  //   () => {
-  //     return axios.get("http://localhost:4000/superheroes");
-  //   },
-  //   {
-  //     // refetchOnWindowFocus: true,
-  //     // refetchInterval: 2000,
-  //     // refetchIntervalInBackground : 2000,
-  //     // enabled: false, // This enables data mounting when page loads.
+  const result = useQuery(
+    "super-heros",
+    () => {
+      return axios.get("http://localhost:4000/superheroes");
+    },
+    {
+      // refetchOnWindowFocus: true,
+      // refetchInterval: 2000,
+      // refetchIntervalInBackground : 2000,
+      // enabled: false, // This enables data mounting when page loads.
 
-  //     // refetchInterval: polling ? 3000 : 0,
-  //     onSuccess,
-  //     onError: onFailure,
-  //     select: (data) => {
-  //       return data.data.map((each) => each.name);
-  //     },
-  //   }
-  // );
+      // refetchInterval: polling ? 3000 : 0,
+      onSuccess,
+      onError: onFailure,
+      // select: (data) => {
+      //   return data.data.map((each) => each.name);
+      // },
+    }
+  );
 
   // useQuery Hook accepts two arguments
   // 1) Unique Key
@@ -48,7 +47,7 @@ const RQDataFetching = () => {
 
   //! By using custom hook (fetching super heros data)
 
-  const result = useFetchSuperHeros(onSuccess, onFailure);
+  // const result = useFetchSuperHeros(onSuccess, onFailure);
   // in the above line we pass the onSuccess and onFailure as parameters,
   // If the list of parameters is long pass them as object
   // Destructure them in custom Hook.
@@ -64,21 +63,21 @@ const RQDataFetching = () => {
   return (
     <div>
       <h2>React Query Data Fetching</h2>
-      <button onClick={refetch}>Fetch Heros</button>
+      {/* <button onClick={refetch}>Fetch Heros</button> */}
       <ol>
-        {/* {data?.data.map((each) => {
+        {data?.data.map((each) => {
           return (
-            <li key={each.name}>
-              <h3 className="text-primary">{each.name}</h3>
+            <li key={each.id}>
+              <h1>{each.name}</h1>
             </li>
           );
-        })} */}
+        })}
 
         {/* by using select property (data transformation) */}
 
-        {data.map((each) => (
+        {/* {data.map((each) => (
           <li key={each}>{each}</li>
-        ))}
+        ))} */}
       </ol>
       {isError && <p className="text-danger">{error.message}</p>}
     </div>

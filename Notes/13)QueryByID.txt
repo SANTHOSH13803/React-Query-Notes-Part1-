@@ -1,0 +1,18 @@
+Display each super user details
+
+Project Setup : 
+
+s1 : Create a new route"Query By ID"
+
+S2 : For each super heros create a seperate route by dynamic id
+
+See the Query by ID you will understand easily.
+
+
+We have written a custom hook(useSuperHeroData),
+
+In the unique ID place we passed an array,
+
+This is because if we don't pass the like above mentioned.
+In cache The superheroes of first items will be saved not the others.
+

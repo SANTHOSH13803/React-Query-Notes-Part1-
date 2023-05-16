@@ -10,9 +10,9 @@ const useFetchSuperHeros = (onSuccess, onFailure) => {
     {
       onSuccess,
       onError: onFailure,
-      select: (data) => {
-        return data.data.map((each) => each.name);
-      },
+      // select: (data) => {
+      //   return data.data.map((each) => each.name);
+      // },
     }
   );
 };

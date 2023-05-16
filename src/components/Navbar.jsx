@@ -8,6 +8,8 @@ const Navbar = () => {
       <NavLink to="/">Home</NavLink>
       <NavLink to="/rq-df">RQ Fetching</NavLink>
       <NavLink to="/tr-df">Traditional Fetching</NavLink>
+      <NavLink to="/rq-query-by-id">Query By ID</NavLink>
+      <NavLink to="/parallel-queries">Parallel Queries</NavLink>
     </nav>
   );
 };

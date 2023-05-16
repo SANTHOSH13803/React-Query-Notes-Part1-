@@ -1,0 +1,31 @@
+> In this slide one of the parameter(id) of the first query is 
+Dependent on second query
+
+
+* Scenerio : 
+    > Let's say we have a youtube channel
+    > Each user is login option
+    > Each user offers some courses in the channel
+
+    So in db.json we put some dummy data for our example
+    
+      "users": [
+            {
+            "id": "santhosh@example.com",
+            "channelId": "Santhosh Tech"
+            }
+        ], 
+        "channels": [
+            {
+            "id": "Santhosh Tech",
+            "courses": ["React", "MUI", "Node JS", "JavaScript"]
+            }
+        ]
+
+* Code implementation: 
+    > Create an route and page for DependentQuery.
+    > Pass the gmail to the DependentQuery route
+    > First get the details of the user
+    > Destructure the channelId from the user
+    > use "enabled" in third arugement,when undefined put false else true
+    > By channelId fetchCourse details  

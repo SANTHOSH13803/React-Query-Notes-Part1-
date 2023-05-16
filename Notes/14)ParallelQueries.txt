@@ -1,0 +1,19 @@
+Scinerio : In some cases we need to use mulitiple useQuery Hooks.
+
+-> How to Use muliple useQuery Hooks
+
+    We Do the same logic as before,
+    But to use multiple we use Alias for the parameters for each useQuery Hook
+
+Setup : 
+> Create a route for parallel query
+
+
+Note : 
+    To use  parameters of multipl parallel queries,
+    we use alias as show below
+
+    const {data : myData} = useQuery(...)
+    const {data : myData2} = useQuery(...)
+
+    Now we can use myData , myData2 without any confilt.

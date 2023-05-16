@@ -1,3 +1,8 @@
 Sometimes we need to fetch the same data repeatedly in different components, 
 Instead of copy paste the code.
     We can reduce the code by implementing code logic as a hook.
+
+we write all the code logic and export the hook.
+Thus we can use it in different components.
+
+The best convention to use custom hooks is it should have "use" as prefix.
