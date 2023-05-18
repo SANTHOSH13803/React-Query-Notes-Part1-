@@ -1,0 +1,33 @@
+RQ provide a hook for Posting data called useMutation
+
+-> useMutation :    
+        we can use useMutation for posting purpose   
+        > How to use
+            useMutation(callback that post the data (i.e, axios.post))
+
+        // useMutation hook also have parameter like isLoading,isError,error,...
+            we can use them for validation
+
+
+How it works : 
+
+    Step-1:   
+        const { mutate: addHero } = useMutation((hero) => {
+            return axios.post("http://localhost:4000/superheroes", hero);
+        });
+
+        // the 'hero' arugument will automatically available, when we pass it in the mutate,
+        see below for understanding
+
+    step:2 : we are using formik here, so in sumbit do the following
+        
+        syntax : 
+            onSubmit: (values) => {
+                    const hero = { name: values.name, alterEgo: values.alterEgo };
+                    // we can pass the all the values in the hero object
+                    // generally we defined it as data (which need to be posted)
+                    addHero(hero); 
+            },
+    
+    step-3 : to display the newly added hero use refetch with a button,
+            thus it updates the new data in cache

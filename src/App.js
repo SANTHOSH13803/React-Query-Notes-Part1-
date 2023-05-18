@@ -11,6 +11,8 @@ import QueryByID from "./components/QueryByID";
 import ParallelQueries from "./components/ParallelQueries";
 import DynamicParallelpage from "./components/DynamicParallel.page";
 import DependentQuery from "./components/DependentQuery";
+import PaginatedQueries from "./components/PaginatedQueries";
+import InfiniteQueries from "./components/InfiniteQueries";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +38,8 @@ function App() {
             element={<DependentQuery email="santhosh@example.com" />}
           />
           {/* to access above page use =>  http://localhost:3000/dependent-query */}
+          <Route path="paginated-queries" element={<PaginatedQueries />} />
+          <Route path="infinite-queries" element={<InfiniteQueries />} />
         </Routes>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />

@@ -1,0 +1,28 @@
+The main objective of infinite scroll is to show "Load more" option
+and to show remaining data
+
+-> React query provides a hook for infinite-queries i.e, useInfiniteQuery
+    
+    > The syntax is same as useQuery, But the value it returns is different
+
+-> Implementation :
+    Step-1 : The fetcher funtion in useInfiniteQuery can have access to the parameter called "pageParams"
+                > This parameter is page number , use it in api.
+
+    Step-2 : useInfiniteQuery provides parameter like hasNextPage,fetchNextPage,isFetchingNextPage
+
+                > hasNextPage -> gives a boolean value true if there is nxt page else false.
+                > fetchNextPage -> this can fetch the nxt page details (generally used of onClick handler)
+                > isFetchingNextPage -> If nxt page was fetching it returns true
+
+    Step-3 : 
+            use this in third parameter
+                getNextPageParam: (_lastpage, pages) => {
+                    if (pages.length < 4) {
+                        return pages.length + 1;
+                    } else {
+                        return undefined;
+                    }
+                },
+
+            // this helps on incrementing page nunber

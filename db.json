@@ -19,12 +19,46 @@
       "id": 4,
       "name": "Aquaman",
       "alterEgo": "Black Manta"
+    },
+    {
+      "name": "Flash",
+      "alterEgo": "Reverse Flash",
+      "id": 5
+    },
+    {
+      "name": "Baahubali",
+      "alterEgo": "Balaala Deva",
+      "id": 6
+    },
+    {
+      "name": "Dom torreto",
+      "alterEgo": "John cena",
+      "id": 7
+    },
+    {
+      "name": "Chirutha",
+      "alterEgo": "Prakash Rah",
+      "id": 8
+    },
+    {
+      "name": "Chirutha",
+      "alterEgo": "Prakash Rah",
+      "id": 9
     }
   ],
   "friends": [
-    { "id": 1, "name": "Ganesh Chenamala" },
-    { "id": 2, "name": "Raghu Manikanta" },
-    { "id": 3, "name": "Manoj Mehatha" }
+    {
+      "id": 1,
+      "name": "Ganesh Chenamala"
+    },
+    {
+      "id": 2,
+      "name": "Raghu Manikanta"
+    },
+    {
+      "id": 3,
+      "name": "Manoj Mehatha"
+    }
   ],
   "users": [
     {
@@ -35,7 +69,46 @@
   "channels": [
     {
       "id": "Santhosh Tech",
-      "courses": ["React", "MUI", "Node JS", "JavaScript"]
+      "courses": [
+        "React",
+        "MUI",
+        "Node JS",
+        "JavaScript"
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "name": "Red"
+    },
+    {
+      "id": 2,
+      "name": "Orange"
+    },
+    {
+      "id": 3,
+      "name": "Purple"
+    },
+    {
+      "id": 4,
+      "name": "Black"
+    },
+    {
+      "id": 5,
+      "name": "White"
+    },
+    {
+      "id": 6,
+      "name": "Pink"
+    },
+    {
+      "id": 7,
+      "name": "Yellow"
+    },
+    {
+      "id": 8,
+      "name": "Indigo"
     }
   ]
 }

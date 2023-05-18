@@ -1,0 +1,39 @@
+Most common use case : In movies application we have "Movie Name","Poster" and "rating" appeared on the all movies page,
+                        we can use those in the detailed movies page. 
+
+Scenerio : When we fetch a data in a component and some of the 
+            data is used in the child component, we can pass the the fetched data to the child component,
+            Thus it avoid loading and provides better user experience.
+Note :  To get additional data of the component we need to do another api call in the child,
+            So the fetched data in child overwrite the initial values.
+
+Example : In our app "Query By ID" component fetches the all the heros data.
+        -> We can use these data as initial values(which is cached data from parent component) in RQsuperHero.js page
+
+Setup : 
+        > Set up the network speed to slow 3g
+
+Implementation : 
+    > We are fetching the inital values of "Query By ID" page and using it in useSuperHeroData hook
+    > We need to pass the 'initialData' to the third parameter.
+    > It accepts a funtion
+    > we use "useQueryClient" which is a hook provided by react-query,
+        by using this we can access the queries data of other component
+
+        syn : const queryClient = useQueryClient();
+
+    > To the third arugument 
+            useQuery(["super-hero", HeroID], fetchSuperHero, {
+            initialData: () => {
+                const hero = queryClient
+                    .getQueryData("super-heros")
+                    ?.data?.find((hero) => hero.id === parseInt(HeroID));
+                if (hero) {
+                    return {
+                    data: hero,
+                    };
+                } else {
+                    return undefined;
+                }
+                },
+            });

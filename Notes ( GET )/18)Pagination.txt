@@ -1,0 +1,25 @@
+First Steps :
+> In db.json add colors
+> Create a component and route related to paginatedQueries
+> Fetch the color using useQuery Hook
+// Point to remember : 
+    Json-server provide limit and offset by default we can use them by following below syntax
+
+    http://localhost:4000/colors?_limit=2&_page=3
+
+    "_" mukyam bigileee.....
+
+    By above syntax ,This for each page there are 2 colors.
+
+    1,2 -> 1st page
+    2,3 -> 2nd page
+    4,5 -> 3rd page and so-on...
+
+> Simple we need to maitain the "page" by using useState
+> The limit and offset should be done at backend part (Here json server support pagintaion as shown above)
+
+> By below url json-server paginates in the backend
+        `http://localhost:4000/colors?_limit=2&_page=${page}`
+
+> For better UI performance we provide "keepPreviousData = true" to the third argument in useQuery
+    This make perivous data show on the UI until the new data is fetched

@@ -1,0 +1,20 @@
+As we can see in the mutation, we need to click or "Fetch Heros" button to display the newly added hero
+
+So to avoid this we QueryInvalidation
+
+By QueryInvalidation the query gets refeched again with fresh updated data.
+
+-> How to use it ? 
+        > In useMutation hook ,pass an object as second arugument.
+        
+        Syntax :
+        // invalidation 
+            {
+                onSuccess: () => {
+                    queryClient.invalidateQueries("super-heroes");
+                    // the key should be same as the fetcher funtion
+                    // invalidateQueries removes the unique key from the cache,
+                        so the RQ checks the key is present in the cache, if not it fetchs the data again
+                },
+            }
+        
